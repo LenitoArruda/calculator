@@ -33,6 +33,12 @@ main{
     font-size: 1.2rem;
     border-style:hidden;
 }
+p{
+    size: 100%;
+    text-align: right;
+    color: rgb(225, 227, 233);
+    padding-right: 1em;
+}
 table{
     border-collapse: separate; 
     border-spacing: 15px;
