@@ -8,70 +8,116 @@ let i = 0; //aux for insertNumber() - Resolving issues when inserting numbers
 let j = 0; //aux for dotInsert() - Resolving issues with dot button 
 let k = 0; //aux for equal() - Resolving issues when users click '=' multiple time 
 let l = 0; //aux for insertNumber() - Resolving issue with cleaning lbl-result 
-
+let m = 0; //aux for back() - Resolving issue with cleaning lbl-result 
+let n = 0; //aux for mathOperations() - Resolving issue with making math after press operation buttons more than once 
+let p = 0;
 
 
 /*----------------------------- Buttons functions -----------------------------*/
 
 // BUTTONS 0 to 9
 function insertNumber(number){
-    if(value.innerHTML === "0" || i==1) 
+    if(value.innerHTML === "0" || ( i ==1 && value.innerHTML != "0.")) 
         value.innerHTML = number
     else 
         value.innerHTML += number
     if(l==1)
         result.innerHTML = '';
     resetAux();
+    if(n==2) n=1;
+    if(p==0){ 
+        operation='';
+        p=1;
+    }
+    
 }
 
 // BUTTONS: -, +, / and *
 function mathOperations(op){
-    firstValue = verifyDotEnd(value.innerHTML);
-    operation = op;
-    result.innerHTML = firstValue + " " + op;
+    if(n==1){
+        secondValue = verifyDotEnd(value.innerHTML);
+        result.innerHTML = (parseFloat(eval(firstValue+operation+secondValue).toFixed(2))) + " " + op;
+        firstValue = parseFloat(eval(firstValue+operation+secondValue).toFixed(2));
+        value.innerHTML = firstValue;
+        operation = op;
+        
+    }
+    else{
+        firstValue = verifyDotEnd(value.innerHTML);
+        operation = op;
+        result.innerHTML = firstValue + " " + op;
+        
+    }
+    n=2;
     i=1;
     l=0;
+    m=2;
+    p=1;
+    
 }   
 
 // BUTTON =
 function equal(){
-    if(k==0){
+    if(operation==''){
+    secondValue = verifyDotEnd(value.innerHTML);
+    result.innerHTML = secondValue + " ="
+    }
+    else if(k==0){
         secondValue = verifyDotEnd(value.innerHTML);
         resolveMath();
         firstValue = value.innerHTML;
     }else{
         firstValue = verifyDotEnd(value.innerHTML);
-        resolveMath();
+        resolveMath(); 
         
     }
     j=1; 
     i=1;
     k=1;
     l=1;
+    m=1;
+    n=0;
+    p=0;
 }
 
 // BUTTON .
 function dotInsert(){
+    if(value.innerHTML === "0" || ( i ==1 && value.innerHTML != "0.")) 
+        value.innerHTML = "0."
+
     if(j===0){
         if(value.innerHTML.includes('.')==false)
             value.innerHTML = value.innerHTML + "."
     }
-    else
-        value.innerHTML = "0."
+    else{
+        value.innerHTML = "0.";
+        if(l==1){
+        result.innerHTML = '';
+        operation = '';
+        secondValue = '';
+        }
+    }
 }
 
 // BUTTON Del
 function reset(){
-    let firstValue = 0;
-    let secondValue = 0;
-    let operation = '';
+    firstValue = 0;
+    secondValue = 0;
+    operation = '';
     value.innerHTML = 0;
-    result.innerHTML = 0;
+    result.innerHTML = '';
     resetAux();
+    n=0;
 }
 
 // BUTTON <
 function back(){
+
+    if(m==1){
+        result.innerHTML = "";
+        return;
+    }
+    if(m==2) return;
 
     if(value.innerHTML != "0"){
         value.innerHTML = value.innerHTML.substring(0,value.innerHTML.length -1);
@@ -89,6 +135,7 @@ function back(){
 function verifyDotEnd(num){
     if(num.charAt(num.length -1) === '.')
        num = num.substring(0,num.length -1)
+       value.innerHTML = num;
     return num;
 }
 
@@ -103,29 +150,72 @@ function resetAux(){
     i=0;
     k=0;
     l=0;
+    m=0;
 }
 
+//Capturing event keypress 
+document.onkeydown = keyPressed;
+document.onkeyup = keyUnpressed;
 
-function insertKeyboard(event){
-    const code = event.keyCode;
-    if(code == 30){
-        value.innerHTML = number;
-        j=0;
+function keyPressed(e){
+    if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)){
+        
+        insertNumber(e.key);
     }
-    else 
-    if(code > 30 && code < 40){ 
-        value.innerHTML += number  ;
-        j=0;
-    }
+    else if (e.keyCode === 106 || e.keyCode === 107 || e.keyCode === 109 || e.keyCode === 111
+        || e.keyCode === 189 || e.keyCode === 193)
+            mathOperations(e.key);
+        
+    else if (e.keyCode == 27 || e.keyCode == 46)
+        reset()
+    else if (e.keyCode == 110 || e.keyCode == 190 || e.keyCode == 188)
+        dotInsert()
+    else if (e.keyCode == 13 || e.keyCode == 187)
+        equal()
+    else if (e.keyCode == 8)
+        back()
+
+    animation(e);
 }
-/*window.onload = function() {
 
-    document.onkeyup = function(e) {
+// Buttons animations
+function animation(e){
+    const btn = document.getElementById(returnId(e));
+    btn.style.cssText = 
+    'background-color: rgba(233, 229, 229, 0.952);' +
+    'color:  rgb(102, 125, 199);' +
+    'box-shadow:inset 0 0 0 3px rgb(74, 96, 170);' +
+    'transition: all 100ms ease;';
+}
+
+function keyUnpressed(e){
+    const btn = document.getElementById(returnId(e));
+    btn.style.cssText = document.querySelector(".buttons");
+}
+
+function returnId(e){
+    let id ='';
+    if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105))
+        id = 'btn-'+ e.key 
+
+    else if (e.keyCode === 189 || e.keyCode === 109)
+        id = 'btn-menos'
+    else if (e.keyCode === 107)
+        id = 'btn-mais'
+    else if (e.keyCode === 111 || e.keyCode === 193)
+        id = 'btn-dividir'      
+    else if (e.keyCode === 106)
+        id = 'btn-multiplicar'    
+    else if (e.keyCode == 27 || e.keyCode == 46)
+        id = 'btn-del'
+    else if (e.keyCode == 110 || e.keyCode == 190 || e.keyCode == 188)
+        id = 'btn-ponto'
+    else if (e.keyCode == 13 || e.keyCode == 187)
+        id = 'btn-equal'
+    else if (e.keyCode == 8)
+        id = 'btn-back'
     
-      
-      var elemento = findElementbyShortcut(e.k)
-      
-  
-      
-    }
-  }*/
+    return id;  
+}
+
+

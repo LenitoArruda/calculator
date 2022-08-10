@@ -7,12 +7,13 @@
         <title>Calculator</title>
     </head>
     <main>
+        <div id="calculator">
         <h1>CALCULATOR</h1>
         <p id="lbl-result"></p>
         <p id="lbl-value">0</p>
         <table>
             <tr>
-                <td><input type="button" class="buttons efeito" id="btn-back-space" value="Del" onclick="reset()"></td>
+                <td><input type="button" class="buttons efeito" id="btn-del" value="Del" onclick="reset()"></td>
                 <td><input type="button" class="buttons efeito" id="btn-back" value="<" onclick="back()"></td>
                 <td><input type="button" class="buttons efeito" id="btn-dividir" value="/" onclick="mathOperations('/')"></td>
                 <td><input type="button" class="buttons efeito" id="btn-multiplicar" value="*" onclick="mathOperations('*')"></td>    
@@ -43,6 +44,7 @@
                 
             </tr>
         </table>
+        </div>
         <script src="script.js"></script>
     </main>
 </html>
