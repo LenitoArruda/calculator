@@ -7,12 +7,10 @@ body{
     overflow:hidden;
     padding-top: 10%;
 }
-h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(225, 227, 233); ;
-}
+
 main{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(0, 0, 0,0.3);;
     border: 5px;
     border-style:double;
     border-color: rgb(194, 197, 238);
@@ -20,46 +18,31 @@ main{
     padding: 3%;
     line-height: 2rem;
 }
-#txt-valor{
-    height: 1.5rem;
-    width: 14.7rem;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    text-align: right;
-    background-color:rgb(102, 125, 199); 
-    color: rgb(194, 197, 238);
-    box-shadow:inset 0 0 0 2px rgb(194, 197, 238);
-    font-size: 1.2rem;
-    border-style:hidden;
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(225, 227, 233); ;
 }
-p{
-    size: 100%;
-    text-align: right;
-    color: rgb(225, 227, 233);
-    padding-right: 1em;
-}
+
 table{
     border-collapse: separate; 
     border-spacing: 15px;
     margin: 0 0 0 0;
 }
+
+/*----------- CLASSES -----------*/
+
 .buttons{
     width: 3rem;
     height: 3rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(225, 227, 233);
-    background-color: rgb(102, 125, 199);
+    background-color: rgb(0, 0, 0, 0);
     border-style:hidden;
     box-shadow:inset 0 0 0 2px rgb(194, 197, 238);
     transition: all 500ms ease;
 }
-#btn-0{
-    width: 115px;
-}
-#btn-igual{
-    width: 180px;
-}
+
 .efeito:hover{
     background-color: rgba(233, 229, 229, 0.952);
     color:  rgb(102, 125, 199);
@@ -70,4 +53,39 @@ table{
 .efeito:active{
     box-shadow:inset 0 0 0 3px rgb(52, 68, 117);
 
+}
+
+/*----------- IDs -----------*/
+
+#lbl-value{
+    background-color:rgb(225, 227, 233);
+    height: 20px;
+    width: 239px;
+    margin: 5px;
+    color: rgb(74, 96, 170);
+    margin-left: 17px;
+    text-align: right;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    
+    
+}
+#lbl-result{
+    height: 20px;
+    width: 239px;
+    margin: 5px;
+    color: rgb(225, 227, 233);
+    margin-left: 17px;
+    text-align: right;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    
+    
+}
+
+#btn-0{
+    width: 115px;
+}
+#btn-equal{
+    height: 112px;
 }
