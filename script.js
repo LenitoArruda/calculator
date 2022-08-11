@@ -4,13 +4,21 @@ const value = document.getElementById('lbl-value');
 let firstValue = 0;
 let secondValue = 0;
 let operation = '';
+let records = [
+    {v1:'',v2:'',op:'',r:''},
+    {v1:'',v2:'',op:'',r:''},
+    {v1:'',v2:'',op:'',r:''},
+    {v1:'',v2:'',op:'',r:''},
+    {v1:'',v2:'',op:'',r:''}
+];
+
 let i = 0; //aux for insertNumber() - Resolving issues when inserting numbers
 let j = 0; //aux for dotInsert() - Resolving issues with dot button 
 let k = 0; //aux for equal() - Resolving issues when users click '=' multiple time 
 let l = 0; //aux for insertNumber() - Resolving issue with cleaning lbl-result 
 let m = 0; //aux for back() - Resolving issue with cleaning lbl-result 
 let n = 0; //aux for mathOperations() - Resolving issue with making math after press operation buttons more than once 
-let p = 0;
+let p = 0;  //aux to Resolve issue with operation after pressing =
 
 
 /*----------------------------- Buttons functions -----------------------------*/
@@ -37,6 +45,7 @@ function mathOperations(op){
     if(n==1){
         secondValue = verifyDotEnd(value.innerHTML);
         result.innerHTML = (parseFloat(eval(firstValue+operation+secondValue).toFixed(2))) + " " + op;
+        insertRecords(firstValue,secondValue,operation,value.innerHTML);
         firstValue = parseFloat(eval(firstValue+operation+secondValue).toFixed(2));
         value.innerHTML = firstValue;
         operation = op;
@@ -132,6 +141,28 @@ function back(){
 
 /*----------------------------- Auxiliary functions -----------------------------*/
 
+//update ol html
+function updateList(){
+    let list;
+    let i=0;
+    while(i<5){   
+            list = document.getElementById('ln-'+(i+1));
+            list.innerHTML = records[i].v1 + " " + records[i].op + " " + records[i].v2 + " = " + records[i].r;
+            i++;
+            if(records[i].v1=='' && records[i].v2=='' && records[i].op=='') 
+            list.innerHTML ='';
+        
+    }
+}
+
+// insert math records into the array records
+function insertRecords(v1,v2,op,r){
+    records.unshift({v1,v2,op,r});
+    records.pop();
+    updateList();
+}
+
+//verify the . at the end of the lbl-value after user press = or +
 function verifyDotEnd(num){
     if(num.charAt(num.length -1) === '.')
        num = num.substring(0,num.length -1)
@@ -139,12 +170,15 @@ function verifyDotEnd(num){
     return num;
 }
 
+//Resolve math operation
 function resolveMath(){
     result.innerHTML = firstValue + " " + operation + " " + secondValue + " =";
     var aux = result.innerHTML.replace(/ /g, "");
     value.innerHTML = parseFloat(eval(aux.substring(0, aux.length -1)).toFixed(2));
+    insertRecords(firstValue,secondValue,operation,value.innerHTML);
 }
 
+// Reset Aux
 function resetAux(){
     j=0;
     i=0;
@@ -157,6 +191,8 @@ function resetAux(){
 document.onkeydown = keyPressed;
 document.onkeyup = keyUnpressed;
 
+
+//Key funcionality
 function keyPressed(e){
     if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)){
         
@@ -178,7 +214,7 @@ function keyPressed(e){
     animation(e);
 }
 
-// Buttons animations
+// Change button layout when user press a key
 function animation(e){
     const btn = document.getElementById(returnId(e));
     btn.style.cssText = 
@@ -188,11 +224,13 @@ function animation(e){
     'transition: all 100ms ease;';
 }
 
+//When user unpress a key the button return to original layout
 function keyUnpressed(e){
     const btn = document.getElementById(returnId(e));
     btn.style.cssText = document.querySelector(".buttons");
 }
 
+//Return the id button when user press a key
 function returnId(e){
     let id ='';
     if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105))

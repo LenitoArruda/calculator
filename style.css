@@ -4,27 +4,40 @@ body{
     align-items:center;
     justify-content: center;
     text-align: center;
-    overflow:hidden;
+    overflow:scroll;
     padding-top: 10%;
 }
 
 main{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-   
-    
 }
 
 h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(225, 227, 233); 
-    padding-right: 2rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    
+}
+h2{
+    color: rgb(225, 227, 233); 
+    font-size: 1.3rem;
 }
 
 table{
     border-collapse: separate; 
-    border-spacing: 15px;
+    border-spacing: 10px;
     margin: 0 0 0 0;
+    padding-left: 0.7rem;
+    font-size: 1.3rem;
+}
+
+ol{
+    color: rgb(225, 227, 233); 
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: 10px;
+    
 }
 
 /*----------- CLASSES -----------*/
@@ -52,49 +65,65 @@ table{
 
 }
 
+
 /*----------- IDs -----------*/
 
 #calculator{
-    width: 19rem;
-    height: 33rem;
+    width: 17rem;
+    height: 28rem;
     background-color: rgb(0, 0, 0,0.3);
     border: 5px;
     border-style:double;
     border-color: rgb(194, 197, 238);
-    border-radius: 5%;
-    line-height: 2rem;
-    padding-left: 1.8rem;
-    padding-top: 1rem;
+    border-radius: 1rem;
+    line-height: 0.2rem;
+
 }
+
+#records{
+    width: 17rem;
+    height: 9rem;
+    background-color: rgb(0, 0, 0,0.3);
+    border: 5px;
+    border-style:double;
+    border-color: rgb(194, 197, 238);
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+    line-height: 0.2rem;
+}
+
 #lbl-value{
     background-color:rgb(225, 227, 233);
-    height: 1.3rem;
-    width: 14.8rem;
+    height: 1rem;
+    width: 13.8rem;
     margin: 0.5rem;
     color: rgb(74, 96, 170);
-    margin-left: 17px;
+    margin-left: 1.5rem;
     text-align: right;
-    padding-bottom: 0.8rem;
+    padding-top: 0.7rem;
     padding-right: 0.4rem;
     
     
 }
 #lbl-result{
-    height: 1.3rem;
-    width: 14.8rem;
-    margin: 0.5rem;
+    height: 0.5rem;
+    width: 13.8rem;
+    margin: 0.6rem;
     color: rgb(225, 227, 233);
     margin-left: 1.2rem;
     text-align: right;
-    padding-bottom: 0.8rem;
-    padding-right: 0.4rem;
-    
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-top: 0.7rem;
     
 }
 
 #btn-0{
-    width: 7rem;
+    width: 6.7rem;
 }
 #btn-equal{
-    height: 7rem;
+    height: 6.7rem;
+}
+#ln-1,#ln-2,#ln-3,#ln-4,#ln-5{
+    padding-left: 1.2rem;
 }
