@@ -18,7 +18,7 @@ let k = 0; //aux for equal() - Resolving issues when users click '=' multiple ti
 let l = 0; //aux for insertNumber() - Resolving issue with cleaning lbl-result 
 let m = 0; //aux for back() - Resolving issue with cleaning lbl-result 
 let n = 0; //aux for mathOperations() - Resolving issue with making math after press operation buttons more than once 
-let p = 0;  //aux to Resolve issue with operation after pressing =
+let p = 0; //aux to Resolve issue with operation after pressing =
 
 
 /*----------------------------- Buttons functions -----------------------------*/
@@ -42,6 +42,7 @@ function insertNumber(number){
 
 // BUTTONS: -, +, / and *
 function mathOperations(op){
+    console.log(n);
     if(n==1){
         secondValue = verifyDotEnd(value.innerHTML);
         result.innerHTML = (parseFloat(eval(firstValue+operation+secondValue).toFixed(2))) + " " + op;
@@ -117,6 +118,19 @@ function reset(){
     result.innerHTML = '';
     resetAux();
     n=0;
+    records = [
+        {v1:'',v2:'',op:'',r:''},
+        {v1:'',v2:'',op:'',r:''},
+        {v1:'',v2:'',op:'',r:''},
+        {v1:'',v2:'',op:'',r:''},
+        {v1:'',v2:'',op:'',r:''}
+    ];
+    while(i<5){   
+        list = document.getElementById('ln-'+(i+1));
+        list.innerHTML ='';
+        i++;
+    }
+    
 }
 
 // BUTTON <
@@ -148,9 +162,9 @@ function updateList(){
     while(i<5){   
             list = document.getElementById('ln-'+(i+1));
             list.innerHTML = records[i].v1 + " " + records[i].op + " " + records[i].v2 + " = " + records[i].r;
-            i++;
             if(records[i].v1=='' && records[i].v2=='' && records[i].op=='') 
             list.innerHTML ='';
+            i++;
         
     }
 }
@@ -255,5 +269,18 @@ function returnId(e){
     
     return id;  
 }
+/*
+$(function() {
+    $('#add-item').on('click', function() {
+      var itemText = $('#new-item').val();
 
+      var newEl = $('<li>' + itemText + '</li>');
+      newEl.hide();
 
+      $('ul').prepend(newEl);
+
+      newEl.slideDown();
+
+    });
+  });
+*/

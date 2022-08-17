@@ -1,5 +1,6 @@
 body{
     background-color: rgb(102, 125, 199);
+    background-image: linear-gradient(to right,rgb(67, 81, 128),rgb(102, 125, 199),rgb(155, 173, 228));
     display:flex;
     align-items:center;
     justify-content: center;
@@ -36,7 +37,8 @@ ol{
     margin-left: 1rem;
     margin-top: 1.5rem;
     text-align: left;
-    font-size: 10px;
+    font-size: 0.9rem;
+    
     
 }
 
@@ -65,7 +67,6 @@ ol{
 
 }
 
-
 /*----------- IDs -----------*/
 
 #calculator{
@@ -76,8 +77,7 @@ ol{
     border-style:double;
     border-color: rgb(194, 197, 238);
     border-radius: 1rem;
-    line-height: 0.2rem;
-
+    line-height: 0.4rem;
 }
 
 #records{
@@ -89,7 +89,8 @@ ol{
     border-color: rgb(194, 197, 238);
     border-radius: 1rem;
     margin-top: 0.5rem;
-    line-height: 0.2rem;
+    line-height: 0.3rem;
+    
 }
 
 #lbl-value{
