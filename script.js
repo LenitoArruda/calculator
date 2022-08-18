@@ -47,6 +47,7 @@ function mathOperations(op){
         secondValue = verifyDotEnd(value.innerHTML);
         result.innerHTML = (parseFloat(eval(firstValue+operation+secondValue).toFixed(2))) + " " + op;
         insertRecords(firstValue,secondValue,operation,value.innerHTML);
+        $('#list-records').show();
         firstValue = parseFloat(eval(firstValue+operation+secondValue).toFixed(2));
         value.innerHTML = firstValue;
         operation = op;
