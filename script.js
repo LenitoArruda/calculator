@@ -1,4 +1,4 @@
-
+$('#list-records').hide();
 const result = document.getElementById('lbl-result');
 const value = document.getElementById('lbl-value');
 let firstValue = 0;
@@ -111,6 +111,7 @@ function dotInsert(){
 
 // BUTTON Del
 function reset(){
+    $('#list-records').hide();
     firstValue = 0;
     secondValue = 0;
     operation = '';
@@ -190,6 +191,7 @@ function resolveMath(){
     var aux = result.innerHTML.replace(/ /g, "");
     value.innerHTML = parseFloat(eval(aux.substring(0, aux.length -1)).toFixed(2));
     insertRecords(firstValue,secondValue,operation,value.innerHTML);
+    $('#list-records').show();
 }
 
 // Reset Aux
@@ -269,6 +271,7 @@ function returnId(e){
     
     return id;  
 }
+
 /*
 $(function() {
     $('#add-item').on('click', function() {
