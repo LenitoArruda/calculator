@@ -12,6 +12,7 @@
 </p>
 <hr>
 <br>
+
 <h2>About</h2>
 <br>
 This project was made in order to study and learn more about HTML, CSS and Javascript.
@@ -25,6 +26,7 @@ Look how it looks like:
 <img alt="Readme-cel" title="Readme-cel" src="./github/cel-gif" />
 </p>
 <br>
+
 <h2>Prerequisites</h2>
 <br>
 Before starting you need to have <a href="https://git-scm.com/downloads">Git</a> installed in your machine. 
@@ -36,6 +38,7 @@ Also it's good to have an editor to work with the code like <a href="https://cod
 <li>And to clone the files type: git clone "https://github.com/LenitoArruda/calculator"</li>
 </ul>
 <br>
+
 <h2>Technologies</h2>
 <br>
 <ul>
@@ -44,6 +47,7 @@ Also it's good to have an editor to work with the code like <a href="https://cod
 <li>Javascript</li>
 </ul>
 <br>
+
 <h2>Author</h2>
 <br>
 This project was made by Lenito Arruda. 
