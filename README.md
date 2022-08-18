@@ -22,8 +22,9 @@ But if you are here and have some math to do feel free to use the Calculator.
 Look how it looks like:
 <br><br>
 <p>
-<img alt="Readme-pc" title="Readme-pc" src="./github/pc-gif" />
-<img alt="Readme-cel" title="Readme-cel" src="./github/cel-gif" />
+<img width=395px alt="Readme-pc" title="Readme-pc" src="./github/pc-gif.gif" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width=300px alt="Readme-cel" title="Readme-cel" src="./github/cel-gif.gif" />
 </p>
 <br>
 
