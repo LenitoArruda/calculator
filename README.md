@@ -19,7 +19,7 @@
 <br>
 This project was made in order to study and learn more about HTML, CSS and Javascript.
 <br>
-But if you are here and have some math to do feel free to use the Calculator.
+I created this project based on the features of the windows calculator. 
 <br><br>
 Look how it looks like:
 <br><br>
