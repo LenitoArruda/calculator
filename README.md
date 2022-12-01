@@ -37,7 +37,7 @@ Also it's good to have an editor to work with the code like <a href="https://cod
 <br><br>
 
 * Open Git in your computer.
-* Go to the folder where you wanna clone the files typing: "cd URL OF WHERE YOU WANT TO CLONE"
+* Go to the folder where you wanna clone the files typing: 
 
 ```
 cd "c:\PLACE TO CLONE"
