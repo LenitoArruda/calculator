@@ -1,18 +1,20 @@
-<h1>CALCULATOR</h1>
+# CALCULATOR
 
-<h3>Are you tired of resolving math? You don't need to worry anymore!</h3>
-<h3>The calculator will resolve your problems.</h3><br>
+### Project made in order to study and learn more about HTML, CSS and Javascript.
+### The calculator resolves all the basic math operations and registers the last 5 operations.
+
+<br>
 <hr>
-<p align="center"><b>This project</b></p>
-<p align="center">
-  <a href="#about">About</a> . 
-  <a href="#prerequisites">Prerequisites</a> . 
-  <a href="#technologies">Technologies</a> . 
-  <a href="#author">Author</a>
-</p>
+
+<h2>This project:</h2>
+
+* [About](#about)
+* [Prerequisites](#prerequisites)
+* [Technologies](#technologies)
+* [Author](#author) </center>
+  
 <hr>
 <br>
-
 <h2>About</h2>
 <br>
 This project was made in order to study and learn more about HTML, CSS and Javascript.
@@ -33,11 +35,18 @@ Look how it looks like:
 Before starting you need to have <a href="https://git-scm.com/downloads">Git</a> installed in your machine. 
 Also it's good to have an editor to work with the code like <a href="https://code.visualstudio.com/">VSCode</a>.
 <br><br>
-<ul>
-<li>Open Git in your computer.</li>
-<li>Go to the folder where you wanna clone the files typing: cd "URL OF WHERE YOU WANT TO CLONE"</li>
-<li>And to clone the files type: git clone "https://github.com/LenitoArruda/calculator"</li>
-</ul>
+
+* Open Git in your computer.
+* Go to the folder where you wanna clone the files typing: "cd URL OF WHERE YOU WANT TO CLONE"
+
+```
+cd "c:\PLACE TO CLONE"
+```
+* And to clone the files type: 
+```
+git clone "https://github.com/LenitoArruda/calculator"
+```
+
 <br>
 
 <h2>Technologies</h2>
