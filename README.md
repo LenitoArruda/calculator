@@ -20,7 +20,7 @@
 This project was made in order to study and learn more about HTML, CSS and Javascript.
 <br>
 I created this project based on the features of the windows calculator.<br>
-Access the project here: https://lenitoarruda.com/project/calculator
+Access the project here: http://lenitoarruda.com/project/calculator
 <br><br>
 Look how it looks like:
 <br><br>
