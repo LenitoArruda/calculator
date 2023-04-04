@@ -25,9 +25,9 @@ Access the project here: http://lenitoarruda.com/project/calculator
 Look how it looks like:
 <br><br>
 <p>
-<img width=395px alt="Readme-pc" title="Readme-pc" src="./github/pc-gif.gif" />
+<img width=590px alt="Readme-pc" title="Readme-pc" src="./github/pc-gif.gif" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img width=300px alt="Readme-cel" title="Readme-cel" src="./github/cel-gif.gif" />
+<img width=250px alt="Readme-cel" title="Readme-cel" src="./github/cel-gif.gif" />
 </p>
 <br>
 
