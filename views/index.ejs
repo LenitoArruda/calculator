@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/styleCalculator.css" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <title>Project | Calculator</title>
+    </head>
+    <body>
+        <%- include('../../../views/partials/navbar.ejs')%>
+        <div id="content" onclick="closeSideBar()" tabindex="0">
+            <div id="calculator">
+                <h2>CALCULATOR</h2>
+                <p id="lbl-result"></p>
+                <p id="lbl-value">0</p>
+                <div class="calc_buttons">
+                    <table>
+                        <tr>
+                            <td><input type="button" class="buttons efeito" id="btn-del" value="Del" onclick="reset()"></td>
+                            <td><input type="button" class="buttons-sign efeito" id="btn-back" value="«" onclick="back()"></td>
+                            <td><input type="button" class="buttons-sign efeito" id="btn-dividir" value="/" onclick="mathOperations('/')"></td>
+                            <td><input type="button" class="buttons-sign efeito" id="btn-multiplicar" value="*" onclick="mathOperations('*')"></td>    
+                        </tr>
+                        
+                        <tr>
+                            <td><input type="button" class="buttons efeito" id="btn-7" value="7" onclick="insertNumber('7')" onkeydown="insertKeyboard(event)"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-8" value="8" onclick="insertNumber('8')"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-9" value="9" onclick="insertNumber('9')"></td>
+                            <td><input type="button" class="buttons-sign efeito" id="btn-mais" value="+" onclick="mathOperations('+')"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class="buttons efeito" id="btn-4" value="4" onclick="insertNumber('4')"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-5" value="5" onclick="insertNumber('5')"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-6" value="6" onclick="insertNumber('6')"></td>
+                            <td><input type="button" class="buttons-sign efeito" id="btn-menos" value="-" onclick="mathOperations('-')"></td>
+                        </tr>
+                        <tr>   
+                            <td><input type="button" class="buttons efeito" id="btn-1" value="1" onclick="insertNumber('1')"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-2" value="2" onclick="insertNumber('2')"></td>
+                            <td><input type="button" class="buttons efeito" id="btn-3" value="3" onclick="insertNumber('3')"></td>
+                            <td rowspan="2"><input type="button" class="buttons efeito" id="btn-equal" value="=" onclick="equal()"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" class="buttons efeito" id="btn-0" value="0" onclick="insertNumber('0')"></td>                    
+                            <td><input type="button" class="buttons efeito" id="btn-ponto" value="." onclick="dotInsert()"></td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            &nbsp;
+            <div id="records">
+                <h2>RECORDS</h2>
+                <div class="list">
+                    <p id="record-aux"></p>
+                    <ol id="list-records">
+                        <li><p id="ln-1"></p></li>   
+                        <li><p id="ln-2"></p></li>   
+                        <li><p id="ln-3"></p></li>   
+                        <li><p id="ln-4"></p></li>   
+                        <li><p id="ln-5"></p></li>   
+                        <li><p id="ln-6"></p></li>   
+                        <li><p id="ln-7"></p></li>   
+                        <li><p id="ln-8"></p></li>   
+                        <li><p id="ln-9"></p></li>   
+                        <li><p id="ln-10"></p></li>   
+                    </ol>
+                </div>
+                <button type="button" class="btn btn-secondary" id="btn-clear" onclick="resetRecords()">CLEAR RECORDS</button>
+            </div>
+        </div>
+        <script src="/js/scriptCalculator.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>    
+</html>
